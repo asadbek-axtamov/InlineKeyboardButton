@@ -11,8 +11,7 @@ def start(update, context):
     photo = open("image.png", "rb")
 
     keyboard = [
-        [InlineKeyboardButton(f"👍 Like {like_count}", callback_data="like")],
-        [InlineKeyboardButton(f"👎  Dislike {dislike_count}", callback_data="dislike")]
+        [InlineKeyboardButton(f"👍 {like_count}", callback_data="like"), InlineKeyboardButton(f"👎 {dislike_count}", callback_data="dislike")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     update.message.reply_photo(photo=photo, reply_markup=reply_markup)
